@@ -33,5 +33,26 @@ describe "finding the country from an IP address" do
   end
 
   context "when the IP address is not cached" do
+    let(:uk) { subject[:locations].create! name: "United Kingdom" }
+    let(:block) { subject[:blocks].create! range: "185.195.233.0/24", location: uk }
+
+    before do
+      block.touch
+    end
+
+    it "finds the country" do
+      post "/api/addresses", ip_address: "185.195.233.88"
+
+      expect(last_response.status).to eq 201
+
+      result = JSON.parse(last_response.body)
+      expect(result["name"]).to eq "United Kingdom"
+    end
+
+    it "caches the IP address" do
+      post "/api/addresses", ip_address: "185.195.233.88"
+
+      expect(subject[:addresses].find_by!(address: "185.195.233.88")).to_not be_nil
+    end
   end
 end

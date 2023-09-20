@@ -2,7 +2,7 @@ require_relative "../config/environment"
 
 class Gio
   def lookup address
-    self[:addresses].find_by!(address: address.strip).location
+    self[:lookups].new(self).lookup address
   end
 
   def [] collection

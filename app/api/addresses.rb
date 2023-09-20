@@ -18,6 +18,8 @@ class Gio
       end
       post do
         present Gio.current.lookup(params[:ip_address])
+      rescue ActiveRecord::RecordNotFound
+        error! "Not Found", 404
       end
     end
   end
