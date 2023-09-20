@@ -1,0 +1,33 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "waitFor": "onCreateCommand",
+  "updateContentCommand": "bundle install",
+  "postCreateCommand": "",
+  "postAttachCommand": {
+    "server": "bundle exec puma -P 3000 -t 8:32"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "aliariff.vscode-erb-beautify",
+        "testdouble.vscode-standard-ruby",
+        "bennycode.sort-everything",
+        "Thadeu.vscode-run-rspec-file",
+        "Cronos87.yaml-symbols",
+        "manuelpuyol.erb-linter",
+        "github.vscode-github-actions",
+        "GitHub.vscode-pull-request-github",
+        "Shopify.ruby-lsp"
+      ]
+    }
+  },
+  "portsAttributes": {
+    "3000": {
+      "label": "Application",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "forwardPorts": [
+    3000
+  ]
+}
