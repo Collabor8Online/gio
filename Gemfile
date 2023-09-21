@@ -14,6 +14,7 @@ group :test do
   gem "database_cleaner"
 end
 
+gem "rake"
 gem "sqlite3"
 gem "grape"
 gem "puma"
