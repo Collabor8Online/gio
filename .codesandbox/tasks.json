@@ -16,6 +16,10 @@
       "name": "Prepare database",
       "command": "rake db:create && rake db:migrate && rake db:test:prepare"
     },
+    "lint": {
+      "name": "Lint",
+      "command": "standardrb --fix"
+    },
     "run-specs": {
       "name": "Run Specs",
       "command": "bundle exec rake spec"
