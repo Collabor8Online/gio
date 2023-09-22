@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "Copying..."
+/usr/bin/rsync -azP ./ app@data-services.c8online.com:~/gio
+echo "...stopping gio..."
+ssh app@data-services.c8online.com "sudo service gio stop"
+echo "...building gio..."
+ssh app@data-services.c8online.com "cd ~/gio && docker-compose build"
+echo "...updating database..."
+ssh app@data-services.c8online.com "cd ~/gio && docker-compose run app rake db:migrate"
+echo "...starting gio..."
+ssh app@data-services.c8online.com "sudo service gio start"
+echo "...done"
