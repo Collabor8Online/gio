@@ -1,4 +1,4 @@
-require_relative "app/api"
+require_relative "app/gio"
 
 use OTR::ActiveRecord::ConnectionManagement
 use OTR::ActiveRecord::QueryCache

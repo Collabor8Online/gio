@@ -4,16 +4,16 @@ default: &default
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: data/database.sqlite3
 
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: data/test.sqlite3
 
 staging:
   <<: *default
-  database: db/staging.sqlite3
+  database: data/database.sqlite3
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: data/database.sqlite3

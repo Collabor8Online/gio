@@ -9,4 +9,4 @@ COPY . /workspace
 
 EXPOSE 3000
 
-CMD bundle exec puma -P 3000 -t 8:32
+CMD bundle exec puma -p 3000 -t 8:32

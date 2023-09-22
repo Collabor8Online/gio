@@ -32,3 +32,6 @@
 # .ruby-version
 # .ruby-gemset
 
+# Ignore data files
+/data/
+
