@@ -1,4 +1,4 @@
-require_relative 'has_application'
+require_relative "has_application"
 
 class AddressBuilder
   include HasApplication
