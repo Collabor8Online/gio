@@ -25,9 +25,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_20_161457) do
 
   create_table "locations", force: :cascade do |t|
     t.string "name", default: "", null: false
+    t.string "reference", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_locations_on_name"
+    t.index ["reference"], name: "index_locations_on_reference"
   end
 
   add_foreign_key "addresses", "blocks"

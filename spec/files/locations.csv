@@ -1,0 +1,4 @@
+geoname_id,locale_code,continent_code,continent_name,country_iso_code,country_name,is_in_european_union
+1814991,en,AS,Asia,CN,China,0
+2077456,en,OC,Oceania,AU,Australia,0
+2635167,en,EU,Europe,GB,"United Kingdom",0
